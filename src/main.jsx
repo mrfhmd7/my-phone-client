@@ -10,11 +10,12 @@ import Phones from './components/Phones.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main/>,
+    element: <Main />,
     children: [
       {
         path: '/phones',
-        element: <Phones/>,
+        element: <Phones />,
+        loader: () => fetch('http://localhost:4000/phones')
       }
     ],
   },
